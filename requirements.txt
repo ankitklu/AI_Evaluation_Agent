@@ -2,3 +2,4 @@ langchain-groq
 langchain 
 python-dotenv
 deepeval
+google-genai
