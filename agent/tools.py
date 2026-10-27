@@ -37,7 +37,8 @@ logging.basicConfig(
 
 @tool
 def get_user_purchase_history(user: str)-> dict:
-    """This tool takes the user username and return a dict  of the user purchase history if the user exists"""
+    """this tool takes the user username and return a dict of the user purchase history if
+    the user exists"""
     logging.info(f"using get_user_purchase_history tool on user: {user}")
     if users_data.get(user):
         return users_data[user]
@@ -46,7 +47,7 @@ def get_user_purchase_history(user: str)-> dict:
 
 @tool
 def calculate_right_refund(user:str, items:list[PurchaseItem]) -> str:
-    """this tool takes a list of the items to be returned and the username and 
+    """this tool takes a list of the items to be returned and the username and
     will return how much the refund is worth"""
 
     logging.info(f"using calculate_right_refund tool to get user's : {user} refund")
@@ -72,7 +73,9 @@ def issue_refund_ticket(user:str, refund_amount: int) -> str:
 
 @tool
 def get_today_date(user:str) -> str:
-    """THis tool will return today's date"""
+    """Return today's date in YYYY-MM-DD format
+    This tool takes no arguments
+    only use if a user exist and an item is present for refund"""
     logging.info(f"using the date tool")
     return date.today().isoformat()
 
